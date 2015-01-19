@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsimaxSerial", "PsimaxSerial\PsimaxSerial.csproj", "{5599534F-9F49-470C-97CD-0CEB3DA75790}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{E08AE19A-AC15-41B9-B0B7-A605B651BADA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5599534F-9F49-470C-97CD-0CEB3DA75790}.Debug|x86.ActiveCfg = Debug|x86
+		{5599534F-9F49-470C-97CD-0CEB3DA75790}.Debug|x86.Build.0 = Debug|x86
+		{5599534F-9F49-470C-97CD-0CEB3DA75790}.Release|x86.ActiveCfg = Release|x86
+		{5599534F-9F49-470C-97CD-0CEB3DA75790}.Release|x86.Build.0 = Release|x86
+		{E08AE19A-AC15-41B9-B0B7-A605B651BADA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E08AE19A-AC15-41B9-B0B7-A605B651BADA}.Debug|x86.Build.0 = Debug|Any CPU
+		{E08AE19A-AC15-41B9-B0B7-A605B651BADA}.Release|x86.ActiveCfg = Release|Any CPU
+		{E08AE19A-AC15-41B9-B0B7-A605B651BADA}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
