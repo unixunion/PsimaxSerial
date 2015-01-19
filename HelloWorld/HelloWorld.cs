@@ -4,6 +4,7 @@ using KSP;
 using UnityEngine;
 using System.Threading;
 using Psimax.IO.Ports;
+using KSP.IO;
 
 
 /*
@@ -23,15 +24,24 @@ namespace HelloWorld
 	[KSPAddon(KSPAddon.Startup.Flight,false)]
 	public class PACS : MonoBehaviourExtended
 	{
-
+		public static PluginConfiguration cfg = PluginConfiguration.CreateForType<PACS>();
 		public static SerialPort port;
 		private bool _sasState = false;
 		private bool _rcsState = false;
+		public static string portName;
+		public static int baudRate;
 
 		internal override void Start() {
 			LogFormatted ("PACS is starting up...");
-			LogFormatted("Connecting to Arduino");
-			port = new SerialPort ("/dev/tty.usbserial", 115200);
+
+			LogFormatted ("Checking for config");
+			cfg.load ();
+			portName = cfg.GetValue<string>("portName", "/dev/tty.usbserial");
+			baudRate = cfg.GetValue<int>("baudRate", 115200);
+			cfg.save();
+
+			LogFormatted("Connecting to Arduino on " + portName + " baud " + baudRate);
+			port = new SerialPort (portName, baudRate);
 			port.Open ();
 			LogFormatted ("Connected");
 		}
