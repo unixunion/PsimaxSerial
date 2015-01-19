@@ -32,6 +32,15 @@ When delivering your addon, be sure to Copy
 * Mono.Posix(local copy enabled)
 * System
 
+## Config
+AFter running HelloWorld ( by actually flying a craft ), the config.xml will exist int he plugin data directory. If you are impatient, here is a example config.
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<config>
+    	<string name="portName">/dev/tty.foo</string>
+    	<int name="baudRate">115200</int>
+	</config>
+
 ## LogOutput
 
 	[LOG 15:00:33.479] 1/19/2015 3:00:33 PM,HelloWorld,PACS is starting up...
