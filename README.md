@@ -1,6 +1,6 @@
 #PsimaxSerial
 
-Serial Arduino communication via a KSP addon.
+A Serial communications library for Kerbal Space Program! Made from genuine recycled other serial libraries around Keb!
 
 ## About
 This plugin is basically a duplication of the System.IO.Ports namespace with one or two tweaks and depends on Mono.Posix and System only.
