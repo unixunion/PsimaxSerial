@@ -792,7 +792,7 @@ namespace Psimax.IO.Ports
 			remove { Events.RemoveHandler (pin_changed, value); }
 		}
 		
-		[MonitoringDescription ("")]
+		[MonitoringDescript	ion ("")]
 		public event SerialDataReceivedEventHandler DataReceived {
 			add { Events.AddHandler (data_received, value); }
 			remove { Events.RemoveHandler (data_received, value); }

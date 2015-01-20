@@ -1,4 +1,5 @@
 *bin/Debug
 *.dll
+*.mdb
 *.exe
 .DS_Store

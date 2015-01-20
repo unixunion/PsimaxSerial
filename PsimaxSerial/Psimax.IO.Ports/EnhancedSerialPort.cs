@@ -6,18 +6,21 @@ using System.Reflection;
 using System.Threading;
 
 // https://antanas.veiverys.com/mono-serialport-datareceived-event-workaround-using-a-derived-class/
+// and http://stackoverflow.com/questions/7582087/how-to-mock-serialdatareceivedeventargs
 
 namespace Psimax.IO.Ports
 {
 	public class EnhancedSerialPort : SerialPort
 	{
 	
+		// a default # of bytes before calling callback
 		int received_bytes_threshold = 4000;
 
-		public EnhancedSerialPort () :base()
-		{
-		}
-			
+		// the alternative to data_received
+		object data_callback = new object ();
+
+		// getter / setter for byte count threshold
+		// when this is reached, data_callback should be called
 		public override int ReceivedBytesThreshold {
 			get {
 				return received_bytes_threshold;
@@ -25,9 +28,12 @@ namespace Psimax.IO.Ports
 			set {
 				if (value == received_bytes_threshold)
 					return;
-
 				received_bytes_threshold = value;
 			}
+		}
+
+		public EnhancedSerialPort () :base()
+		{
 		}
 
 		public EnhancedSerialPort (IContainer container) : base (container)
@@ -53,11 +59,7 @@ namespace Psimax.IO.Ports
 		public EnhancedSerialPort (string portName, int baudRate, Parity parity, int dataBits, StopBits stopBits):base(portName, baudRate, parity, dataBits,stopBits)
 		{
 		}
-
-		// private member access via reflection
-		int fd;
-		FieldInfo disposedFieldInfo;
-		object data_received;
+			
 
 		public new void Open ()
 		{
@@ -65,12 +67,6 @@ namespace Psimax.IO.Ports
 			base.Open();
 
 			if (IsWindows == false) {
-				FieldInfo fieldInfo = BaseStream.GetType().GetField("fd", BindingFlags.Instance | BindingFlags.NonPublic);
-				fd = (int)fieldInfo.GetValue(BaseStream);
-				disposedFieldInfo = BaseStream.GetType().GetField("disposed", BindingFlags.Instance | BindingFlags.NonPublic);
-				fieldInfo = typeof(SerialPort).GetField("data_received", BindingFlags.Instance | BindingFlags.NonPublic);
-				data_received = fieldInfo.GetValue(this);
-
 				new Thread(new ThreadStart(this.EventThreadFunction)).Start();
 			}
 		}
