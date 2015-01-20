@@ -5,6 +5,8 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Threading;
 
+// https://antanas.veiverys.com/mono-serialport-datareceived-event-workaround-using-a-derived-class/
+
 namespace Psimax.IO.Ports
 {
 	public class EnhancedSerialPort : SerialPort
