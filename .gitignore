@@ -1,2 +1,6 @@
 *bin/Debug
+*obj/Debug
 .DS_Store
+*.dll
+*.mdb
+*.exe
