@@ -49,6 +49,7 @@
     <Compile Include="Psimax.IO.Ports\StopBits.cs" />
     <Compile Include="Psimax.IO.Ports\WinSerialStream.cs" />
     <Compile Include="Psimax.IO.Ports\Hacks\MonoTODOAttribute.cs" />
+    <Compile Include="Psimax.IO.Ports\EnhancedSerialPort.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Posix">

@@ -1,9 +1,13 @@
 #PsimaxSerial
 
-Serial Arduino communication via a KSP addon.
+A Serial communications library for Kerbal Space Program! Made from genuine recycled other serial libraries around Keb!
 
 ## About
 This plugin is basically a duplication of the System.IO.Ports namespace with one or two tweaks and depends on Mono.Posix and System only.
+
+## Known Issues
+
+I have not been able to get DataReceived events to fire, but this is a general problem with Mono/.NET and is due to the Arduino lacking RTS, DTS and DTR signalling. I am investigating possible solutions.
 
 ## IDE Setup
 
@@ -31,6 +35,15 @@ When delivering your addon, be sure to Copy
 
 * Mono.Posix(local copy enabled)
 * System
+
+## Config
+AFter running HelloWorld ( by actually flying a craft ), the config.xml will exist int he plugin data directory. If you are impatient, here is a example config.
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<config>
+    	<string name="portName">/dev/tty.foo</string>
+    	<int name="baudRate">115200</int>
+	</config>
 
 ## LogOutput
 

@@ -1,0 +1,6 @@
+/Users/marzubus/Projects/PsimaxSerial/HWTest/bin/Debug/HWTest.exe.mdb
+/Users/marzubus/Projects/PsimaxSerial/HWTest/bin/Debug/HWTest.exe
+/Users/marzubus/Projects/PsimaxSerial/HWTest/obj/x86/Debug/HWTest.exe
+/Users/marzubus/Projects/PsimaxSerial/HWTest/obj/x86/Debug/HWTest.exe.mdb
+/Users/marzubus/Projects/PsimaxSerial/HWTest/bin/Debug/PsimaxSerial.dll
+/Users/marzubus/Projects/PsimaxSerial/HWTest/bin/Debug/PsimaxSerial.dll.mdb

@@ -1,0 +1,5 @@
+/Users/marzubus/Projects/PsimaxSerial/PsimaxSerial/bin/Debug/PsimaxSerial.dll.mdb
+/Users/marzubus/Projects/PsimaxSerial/PsimaxSerial/bin/Debug/PsimaxSerial.dll
+/Users/marzubus/Projects/PsimaxSerial/PsimaxSerial/obj/x86/Debug/PsimaxSerial.dll
+/Users/marzubus/Projects/PsimaxSerial/PsimaxSerial/obj/x86/Debug/PsimaxSerial.dll.mdb
+/Users/marzubus/Projects/PsimaxSerial/PsimaxSerial/bin/Debug/Mono.Posix.dll

@@ -1,0 +1,7 @@
+/Users/marzubus/Projects/PsimaxSerial/SerialTest/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/marzubus/Projects/PsimaxSerial/SerialTest/bin/Debug/SerialTest.exe.mdb
+/Users/marzubus/Projects/PsimaxSerial/SerialTest/bin/Debug/SerialTest.exe
+/Users/marzubus/Projects/PsimaxSerial/SerialTest/obj/x86/Debug/SerialTest.exe
+/Users/marzubus/Projects/PsimaxSerial/SerialTest/obj/x86/Debug/SerialTest.exe.mdb
+/Users/marzubus/Projects/PsimaxSerial/SerialTest/bin/Debug/PsimaxSerial.dll
+/Users/marzubus/Projects/PsimaxSerial/SerialTest/bin/Debug/PsimaxSerial.dll.mdb

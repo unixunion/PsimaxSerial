@@ -1,9 +1,10 @@
 ﻿<Properties StartupItem="PsimaxSerial/PsimaxSerial.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PsimaxSerial/Psimax.IO.Ports/WinSerialStream.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="HWTest/PsimaxSerialTest.cs">
     <Files>
-      <File FileName="PsimaxSerial/Psimax.IO.Ports/WinSerialStream.cs" Line="33" Column="33" />
-      <File FileName="PsimaxSerial/Psimax.IO.Ports/SerialPort.cs" Line="7" Column="7" />
+      <File FileName="HWTest/PsimaxSerialTest.cs" Line="25" Column="25" />
+      <File FileName="HWTest/Program.cs" Line="6" Column="6" />
+      <File FileName="PsimaxSerial/Psimax.IO.Ports/SerialPort.cs" Line="18" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

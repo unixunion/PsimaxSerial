@@ -401,7 +401,7 @@ namespace Psimax.IO.Ports
 		[DefaultValueAttribute(1)]
 		[Browsable (true)]
 		[MonitoringDescription ("")]
-		public int ReceivedBytesThreshold {
+		virtual public int ReceivedBytesThreshold {
 			get {
 				throw new NotImplementedException ();
 			}
@@ -760,16 +760,17 @@ namespace Psimax.IO.Ports
 				handler (this, args);
 		}
 
-		internal void OnDataReceived (SerialDataReceivedEventArgs args)
+		virtual internal void OnDataReceived (SerialDataReceivedEventArgs args)
 		{
+			Console.WriteLine ("onDataReceived:");
 			SerialDataReceivedEventHandler handler =
 				(SerialDataReceivedEventHandler) Events [data_received];
-
+			Console.WriteLine ("handler: " + handler);
 			if (handler != null)
 				handler (this, args);
 		}
 		
-		internal void OnDataReceived (SerialPinChangedEventArgs args)
+		virtual internal void OnDataReceived (SerialPinChangedEventArgs args)
 		{
 			SerialPinChangedEventHandler handler =
 				(SerialPinChangedEventHandler) Events [pin_changed];
