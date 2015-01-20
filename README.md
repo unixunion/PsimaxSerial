@@ -7,7 +7,7 @@ This plugin is basically a duplication of the System.IO.Ports namespace with one
 
 ## Known Issues/Limitations
 
-## DataReceived Event Callback
+### DataReceived Event Callback
 I have not been able to get DataReceived events to fire, but this is a general problem with Mono/.NET and I believe it is due to the Arduino lacking RTS, DTS and DTR signalling. I am investigating possible solutions. It seems the methods are just never called.
 
 ## IDE Setup
