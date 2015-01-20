@@ -5,6 +5,11 @@ A Serial communications library for Kerbal Space Program! Made from genuine recy
 ## About
 This plugin is basically a duplication of the System.IO.Ports namespace with one or two tweaks and depends on Mono.Posix and System only.
 
+## Known Issues/Limitations
+
+## DataReceived Event Callback
+I have not been able to get DataReceived events to fire, but this is a general problem with Mono/.NET and I believe it is due to the Arduino lacking RTS, DTS and DTR signalling. I am investigating possible solutions. It seems the methods are just never called.
+
 ## IDE Setup
 
 Xamarin Studio on Mac, projects are .NET 3.5 targets. 
