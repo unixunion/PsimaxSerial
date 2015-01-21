@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<config>
-    <string name="portName">/dev/tty.foo</string>
-    <int name="baudRate">115200</int>
-</config>
