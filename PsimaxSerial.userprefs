@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="PsimaxSerial/PsimaxSerial.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PsimaxSerial/Psimax.IO.Ports/WinSerialStream.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ConsoleSerialTest/Program.cs">
     <Files>
-      <File FileName="PsimaxSerial/Psimax.IO.Ports/WinSerialStream.cs" Line="33" Column="33" />
-      <File FileName="PsimaxSerial/Psimax.IO.Ports/SerialPort.cs" Line="7" Column="7" />
+      <File FileName="ConsoleSerialTest/Program.cs" Line="1" Column="1" />
+      <File FileName="PsimaxSerial/Psimax.IO.Ports/SerialPort.cs" Line="34" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <AuthorInfo Name="Kegan Holtzhausen" Email="marzubus@gmail.com" Copyright="Kegan Holtzhausen" Company="deBlox" Trademark="" />
 </Properties>

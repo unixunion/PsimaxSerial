@@ -19,12 +19,14 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
-using System.Runtime.InteropServices;
 using Microsoft.Win32;
+using System.ComponentModel;
 using System.IO;
+using System.Runtime.InteropServices;
+using System.Reflection;
+using System.Threading;
 
 namespace Psimax.IO.Ports
 {
@@ -56,6 +58,7 @@ namespace Psimax.IO.Ports
 		int write_timeout = InfiniteTimeout;
 		int readBufferSize = DefaultReadBufferSize;
 		int writeBufferSize = DefaultWriteBufferSize;
+		int receivedBytesThreshold;
 		object error_received = new object ();
 		object data_received = new object ();
 		object pin_changed = new object ();
@@ -397,19 +400,19 @@ namespace Psimax.IO.Ports
 			}
 		}
 
-		[MonoTODO("Not implemented")]
+//		[MonoTODO("Not implemented")]
 		[DefaultValueAttribute(1)]
 		[Browsable (true)]
 		[MonitoringDescription ("")]
 		public int ReceivedBytesThreshold {
 			get {
-				throw new NotImplementedException ();
+				return receivedBytesThreshold;
 			}
 			set {
 				if (value <= 0)
 					throw new ArgumentOutOfRangeException ("value");
 
-				throw new NotImplementedException ();
+				receivedBytesThreshold = value;
 			}
 		}
 
@@ -568,19 +571,56 @@ namespace Psimax.IO.Ports
 			}
 		}
 
+		// A Function to thread off on *nix to monitor bytes and when to call OnDataReceived
+		private void EventThreadFunction( )
+		{
+			do
+			{
+				try
+				{
+					var _stream = BaseStream;
+					if (_stream == null){
+						return;
+					}
+
+					// call data
+					if (BytesToRead >= ReceivedBytesThreshold) {
+						// create a appropriate Event args object
+						ConstructorInfo constructor = typeof (SerialDataReceivedEventArgs).GetConstructor(
+							BindingFlags.NonPublic | BindingFlags.Instance,
+							null,
+							new[] {typeof (SerialData)},
+							null);
+						SerialDataReceivedEventArgs _ea = (SerialDataReceivedEventArgs)constructor.Invoke(new object[] {SerialData.Eof});
+						OnDataReceived(_ea);
+					}
+
+				}
+				catch
+				{
+					return;
+				}
+			}
+			while (IsOpen);
+		}
+
 		public void Open ()
 		{
 			if (is_open)
 				throw new InvalidOperationException ("Port is already open");
-			
-			if (IsWindows) // Use windows kernel32 backend
+
+			if (IsWindows) { // Use windows kernel32 backend
 				stream = new WinSerialStream (port_name, baud_rate, data_bits, parity, stop_bits, dtr_enable,
 					rts_enable, handshake, read_timeout, write_timeout, readBufferSize, writeBufferSize);
-			else // Use standard unix backend
+				is_open = true;
+			} else { // Use standard unix backend
+
 				stream = new SerialPortStream (port_name, baud_rate, data_bits, parity, stop_bits, dtr_enable,
 					rts_enable, handshake, read_timeout, write_timeout, readBufferSize, writeBufferSize);
-			
-			is_open = true;
+				is_open = true;
+				Thread.Sleep (125); // need a micro delay here so the stream is running before the new event thread
+				new Thread(new ThreadStart(this.EventThreadFunction)).Start();
+			}
 		}
 
 		public int Read (byte[] buffer, int offset, int count)
