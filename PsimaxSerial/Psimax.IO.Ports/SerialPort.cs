@@ -593,7 +593,6 @@ namespace Psimax.IO.Ports
 							null);
 						SerialDataReceivedEventArgs _ea = (SerialDataReceivedEventArgs)constructor.Invoke(new object[] {SerialData.Eof});
 						OnDataReceived(_ea);
-
 					}
 
 				}
@@ -613,15 +612,15 @@ namespace Psimax.IO.Ports
 			if (IsWindows) { // Use windows kernel32 backend
 				stream = new WinSerialStream (port_name, baud_rate, data_bits, parity, stop_bits, dtr_enable,
 					rts_enable, handshake, read_timeout, write_timeout, readBufferSize, writeBufferSize);
+				is_open = true;
 			} else { // Use standard unix backend
 
 				stream = new SerialPortStream (port_name, baud_rate, data_bits, parity, stop_bits, dtr_enable,
 					rts_enable, handshake, read_timeout, write_timeout, readBufferSize, writeBufferSize);
-				Thread.Sleep (100); // need a micro delay here so the stream is running before the new event thread
+				is_open = true;
+				Thread.Sleep (125); // need a micro delay here so the stream is running before the new event thread
 				new Thread(new ThreadStart(this.EventThreadFunction)).Start();
 			}
-
-			is_open = true;
 		}
 
 		public int Read (byte[] buffer, int offset, int count)
