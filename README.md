@@ -8,7 +8,7 @@ This plugin is basically a duplication of the System.IO.Ports namespace with one
 ## Known Issues/Limitations
 
 ### DataReceived Event Callback
-Due to an apparent Mono and Event issue when running code via Unity, the OnDataReceived method within the serial driver never gets called on Mac / *nix at least. My recommendation is to check the port instance for available bytes during Unity's MonoBehaviour->Update() call. See my KSPSerialIO for an example. Make sure to run the serial device at a decent speed so you dont hold up the Update() routine.
+Due to an apparent Mono and Event issue when running code via Unity, the OnDataReceived method within the serial driver never gets called on Mac / *nix at least. My recommendation is to check the port instance for available bytes during Unity's MonoBehaviour->Update() call. See my fork of KSPSerialIO for an example. Make sure to run the serial device at a decent speed so you dont hold up the Update() routine.
 
 ## IDE Setup
 
