@@ -32,16 +32,16 @@ namespace ConsoleSerialTest
 	{
 		public static void Main (string[] args)
 		{
-			SerialPort port = new SerialPort ("/dev/tty.usbmodem411", 115200);
-			port.ReceivedBytesThreshold = 10;
+			SerialPort port = new SerialPort ("/dev/tty.usbmodem621", 115200);
+//			port.ReceivedBytesThreshold = 10;
 			port.DataReceived += DataCallback;
 			port.Open ();
 
 			Console.WriteLine ("Sending echo's while the handler waits for replies");
 			do {
 				while (! Console.KeyAvailable) {
-//					port.Write("1");
-					Thread.Sleep(20);
+					port.Write("1");
+					Thread.Sleep(50);
 				}
 			} while (Console.ReadKey(true).Key != ConsoleKey.Escape);
 
@@ -54,7 +54,11 @@ namespace ConsoleSerialTest
 		public static void DataCallback(object sender, SerialDataReceivedEventArgs e) 
 		{
 			SerialPort sp = (SerialPort)sender;
-			Console.WriteLine ("DataCallBack: " + sp.ReadExisting() );
+			Console.WriteLine ("Data callback");
+			while (sp.BytesToRead==0) {
+				Console.Write ("databyte: " + sp.ReadByte ());
+			}
+			Console.WriteLine("out of bytes");
 			readEvents (sp);
 		}
 

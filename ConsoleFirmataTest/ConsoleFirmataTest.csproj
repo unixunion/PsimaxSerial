@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{16368C40-4A99-48FE-AC08-FD86EC9E42C2}</ProjectGuid>
+    <ProjectGuid>{6BDC1D27-59E8-48FA-8D86-677D6A6E6982}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleSerialTest</RootNamespace>
-    <AssemblyName>ConsoleSerialTest</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <RootNamespace>ConsoleFirmataTest</RootNamespace>
+    <AssemblyName>ConsoleFirmataTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ReleaseVersion>0.3</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">

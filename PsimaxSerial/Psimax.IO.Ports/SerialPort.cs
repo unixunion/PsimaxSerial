@@ -618,8 +618,8 @@ namespace Psimax.IO.Ports
 				stream = new SerialPortStream (port_name, baud_rate, data_bits, parity, stop_bits, dtr_enable,
 					rts_enable, handshake, read_timeout, write_timeout, readBufferSize, writeBufferSize);
 				is_open = true;
-				Thread.Sleep (125); // need a micro delay here so the stream is running before the new event thread
-				new Thread(new ThreadStart(this.EventThreadFunction)).Start();
+//				Thread.Sleep (125); // need a micro delay here so the stream is running before the new event thread
+//				new Thread(new ThreadStart(this.EventThreadFunction)).Start();
 			}
 		}
 

@@ -1,5 +1,6 @@
 *bin/Debug
 *obj/Debug
+*obj/x86
 .DS_Store
 *.dll
 *.mdb

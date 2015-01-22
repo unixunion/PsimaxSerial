@@ -2,15 +2,14 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{16368C40-4A99-48FE-AC08-FD86EC9E42C2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleSerialTest</RootNamespace>
-    <AssemblyName>ConsoleSerialTest</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <ReleaseVersion>0.3</ReleaseVersion>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3E200A88-7F43-42EF-AD09-9F4F3C99F4C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HelloWorldFirmata</RootNamespace>
+    <AssemblyName>HelloWorldFirmata</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -18,24 +17,30 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Externalconsole>true</Externalconsole>
-    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Externalconsole>true</Externalconsole>
-    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\Library\Application Support\Steam\SteamApps\common\Kerbal Space Program\KSP.app\Contents\Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\Library\Application Support\Steam\SteamApps\common\Kerbal Space Program\KSP.app\Contents\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Framework\MonoBehaviourExtended.cs" />
+    <Compile Include="Framework\SkinsLibrary.cs" />
+    <Compile Include="HelloWorldFirmata.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

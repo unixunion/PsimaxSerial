@@ -1,0 +1,12 @@
+/Users/marzubus/Projects/PsimaxSerial/HelloWorld/bin/Release/HelloWorld.dll.mdb
+/Users/marzubus/Projects/PsimaxSerial/HelloWorld/bin/Release/HelloWorld.dll
+/Users/marzubus/Projects/PsimaxSerial/HelloWorld/obj/Release/HelloWorld.dll
+/Users/marzubus/Projects/PsimaxSerial/HelloWorld/obj/Release/HelloWorld.dll.mdb
+/Users/marzubus/Projects/PsimaxSerial/HelloWorld/bin/Release/Assembly-CSharp.dll
+/Users/marzubus/Projects/PsimaxSerial/HelloWorld/bin/Release/UnityEngine.dll
+/Users/marzubus/Projects/PsimaxSerial/HelloWorld/bin/Release/Mono.Posix.dll
+/Users/marzubus/Projects/PsimaxSerial/HelloWorld/bin/Release/PsimaxSerial.dll
+/Users/marzubus/Projects/PsimaxSerial/HelloWorld/bin/Release/Assembly-CSharp-firstpass.dll
+/Users/marzubus/Projects/PsimaxSerial/HelloWorld/bin/Release/System.Xml.dll
+/Users/marzubus/Projects/PsimaxSerial/HelloWorld/bin/Release/TDx.TDxInput.dll
+/Users/marzubus/Projects/PsimaxSerial/HelloWorld/bin/Release/Mono.Cecil.dll

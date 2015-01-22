@@ -1,0 +1,5 @@
+/Users/marzubus/Projects/PsimaxSerial/ConsoleSerialTest/bin/Release/ConsoleSerialTest.exe.mdb
+/Users/marzubus/Projects/PsimaxSerial/ConsoleSerialTest/bin/Release/ConsoleSerialTest.exe
+/Users/marzubus/Projects/PsimaxSerial/ConsoleSerialTest/obj/x86/Release/ConsoleSerialTest.exe
+/Users/marzubus/Projects/PsimaxSerial/ConsoleSerialTest/obj/x86/Release/ConsoleSerialTest.exe.mdb
+/Users/marzubus/Projects/PsimaxSerial/ConsoleSerialTest/bin/Release/PsimaxSerial.dll

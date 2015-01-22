@@ -7,12 +7,40 @@ using Psimax.IO.Ports;
 using KSP.IO;
 
 /*
- * A Stupid plugin which sends chars to an arduino when in Flight!
+ * A Stupid plugin which sends chars to an arduino when in FLIGHT!
  * 
  * r = RCS off
  * R = RCS ON
  * s = SAS off
  * S = SAS on
+ * 
+ * // arduino loop code, shows when RCS state changes in FLIGHT!
+
+void setup() {
+	Serial.begin(57600); 
+	pinMode(13, OUTPUT); 
+	digitalWrite(13, LOW);
+}
+
+void loop() {
+	if (Serial.available() > 0) {
+		char c = (char)Serial.read();
+		if (c == 'R') {
+			digitalWrite(13, HIGH);
+		}
+		if (c == 'r') {
+			digitalWrite(13, LOW);
+		}
+		if (c == 'S') {
+
+
+		}
+		if (c == 's') {
+
+		}
+
+	}
+}
  * 
  * 
  */
@@ -20,7 +48,7 @@ namespace HelloWorld
 {
 
 
-	[KSPAddon(KSPAddon.Startup.MainMenu, false)]
+	[KSPAddon(KSPAddon.Startup.Flight, false)]
 	public class PACS : MonoBehaviourExtended
 	{
 		public static PluginConfiguration cfg = PluginConfiguration.CreateForType<PACS>();
@@ -49,8 +77,7 @@ namespace HelloWorld
 			
 
 		public static void OnData(object sender, SerialDataReceivedEventArgs e) {
-			SerialPort sp = (SerialPort)sender;
-			Console.WriteLine ("DataCallBack: " + sp.ReadByte());
+			Console.WriteLine ("OnData callback");
 		}
 
 		internal override void Awake()
@@ -89,69 +116,25 @@ namespace HelloWorld
 		internal override void Update() {
 			if (initialized) {
 				readEvents ();
-				LogFormatted ("reading SAS");
-				//			_sasState = (FlightGlobals.ActiveVessel.ActionGroups [KSPActionGroup.SAS]);
-				LogFormatted ("reading RCS");
-				//			_rcsState = (FlightGlobals.ActiveVessel.ActionGroups [KSPActionGroup.RCS]);
+				LogFormatted ("reading data");
+				_sasState = (FlightGlobals.ActiveVessel.ActionGroups [KSPActionGroup.SAS]);
+//				LogFormatted ("reading RCS");
+				_rcsState = (FlightGlobals.ActiveVessel.ActionGroups [KSPActionGroup.RCS]);
 
 				LogFormatted ("Sending SAS:" + _sasState + " RCS:" + _rcsState);
 				// send the states one at a time
 				port.Write (_sasState ? "S" : "s");
 				port.Write (_rcsState ? "R" : "r");
 				LogFormatted ("Done");
-				Thread.Sleep(1000);  
 			} else {
 				LogFormatted ("Not initialized, skipping update");
 			}
 
 		}
 
-		static byte[] GetBytes(string str)
-		{
-			byte[] bytes = new byte[str.Length * sizeof(char)];
-			System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
-			return bytes;
-		}
-
-		static string GetString(byte[] bytes)
-		{
-			char[] chars = new char[bytes.Length / sizeof(char)];
-			System.Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
-			return new string(chars);
-		}
-
 		private void readEvents() {
 			if (port.IsOpen) {
-
-				// Begin message bute
-				while (port.ReadByte() != 0xBE) {
-					if (port.BytesToRead == 0)
-						return;
-				}
-
-				// Second Byte in Begin Message
-				if (port.ReadByte () == 0xEF) {
-					LogFormatted ("start of command seen!");
-
-					// the length of the message
-					int rx_len = (byte)port.ReadByte();
-
-					// the type of the message
-					int id = (byte)port.ReadByte();
-
-					switch (id)
-					{
-					case 0:
-						LogFormatted ("message id 0");
-						break;
-					case 1:
-						LogFormatted ("message if 1");
-						break;
-					}
-
-				}
-
-
+				LogFormatted ("readEvents and port is open!");
 			}
 		}
 
