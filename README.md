@@ -1,14 +1,33 @@
 #PsimaxSerial
 
-A Serial communications library for Kerbal Space Program! Made from genuine recycled other serial libraries around Keb!
+A Serial communications library for Kerbal Space Program! Made from genuine recycled other serial libraries!
 
 ## About
-This plugin is basically a duplication of the System.IO.Ports namespace with one or two tweaks and depends on Mono.Posix and System only.
+This plugin is basically a duplication of the System.IO.Ports namespace with one or two tweaks and depends on Mono.Posix and System only. It also support Firmata.
+
+## Whats New
+
+### Firmata
+Firmata support has now been added based off Tim Farley's Arduion.cs. 
+
+## Features
+
+* SerialPort access from KSP Addon's
+* Firmata protocol support
 
 ## Known Issues/Limitations
 
 ### DataReceived Event Callback
 Due to an apparent Mono and Event issue when running code via Unity, the OnDataReceived method within the serial driver never gets called on Mac / *nix at least. My recommendation is to check the port instance for available bytes during Unity's MonoBehaviour->Update() call. See my fork of KSPSerialIO for an example. Make sure to run the serial device at a decent speed so you dont hold up the Update() routine.
+
+## Config
+AFter running HelloWorld ( by actually flying a craft ), the config.xml will exist int he plugin data directory. If you are impatient, here is a example config.
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<config>
+    	<string name="portName">/dev/tty.usbmodem621</string>
+    	<int name="baudRate">115200</int>
+	</config>
 
 ## IDE Setup
 
@@ -37,14 +56,7 @@ When delivering your addon, be sure to Copy
 * Mono.Posix(local copy enabled)
 * System
 
-## Config
-AFter running HelloWorld ( by actually flying a craft ), the config.xml will exist int he plugin data directory. If you are impatient, here is a example config.
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<config>
-    	<string name="portName">/dev/tty.foo</string>
-    	<int name="baudRate">115200</int>
-	</config>
 
 ## LogOutput
 
