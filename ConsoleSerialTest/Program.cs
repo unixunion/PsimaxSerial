@@ -33,7 +33,7 @@ namespace ConsoleSerialTest
 		public static void Main (string[] args)
 		{
 			SerialPort port = new SerialPort ("/dev/tty.usbmodem621", 115200);
-//			port.ReceivedBytesThreshold = 10;
+			port.ReceivedBytesThreshold = 10;
 			port.DataReceived += DataCallback;
 			port.Open ();
 

@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="PsimaxSerial/PsimaxSerial.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="HelloWorld/HelloWorld.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="HelloWorldFirmata/HelloWorldFirmata.cs">
     <Files>
-      <File FileName="PsimaxSerial/Psimax.IO.Ports/EnhancedSerial.cs" Line="33" Column="33" />
-      <File FileName="ConsoleSerialTest/Program.cs" Line="31" Column="31" />
-      <File FileName="HelloWorld/HelloWorld.cs" Line="21" Column="21" />
-      <File FileName="PsimaxSerial/Psimax.IO.Ports/SerialPort.cs" Line="20" Column="20" />
+      <File FileName="HelloWorldFirmata/HelloWorldFirmata.cs" Line="54" Column="54" />
+      <File FileName="ConsoleFirmataTest/Program.cs" Line="38" Column="38" />
+      <File FileName="PsimaxSerial/Psimax.IO.Ports/Firmata.cs" Line="35" Column="35" />
+      <File FileName="ConsoleSerialTest/Program.cs" Line="27" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

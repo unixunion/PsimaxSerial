@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleFirmataTest", "Conso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldFirmata", "HelloWorldFirmata\HelloWorldFirmata.csproj", "{3E200A88-7F43-42EF-AD09-9F4F3C99F4C7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{460CCBB8-6639-4638-964A-66D061AD556E}"
+	ProjectSection(SolutionItems) = preProject
+		PsimaxSerial.sln = PsimaxSerial.sln
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -38,12 +43,14 @@ Global
 		{E08AE19A-AC15-41B9-B0B7-A605B651BADA}.Release|x86.ActiveCfg = Release|Any CPU
 		{E08AE19A-AC15-41B9-B0B7-A605B651BADA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = None
 		$1.ResourceNamePolicy = FileFormatDefault
 		description = Fixed issue-1 where DataReceived was not being called
-		version = 0.3
+		version = 0.4
 	EndGlobalSection
 EndGlobal

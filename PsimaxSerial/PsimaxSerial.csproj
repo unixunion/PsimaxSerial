@@ -9,7 +9,7 @@
     <AssemblyName>PsimaxSerial</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <Description>Cut and Run from System.IO.Ports</Description>
-    <ReleaseVersion>0.3</ReleaseVersion>
+    <ReleaseVersion>0.4</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>

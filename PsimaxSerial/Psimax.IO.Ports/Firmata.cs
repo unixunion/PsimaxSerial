@@ -1,5 +1,5 @@
 ﻿/*
- * Based off Tim Farley's Arduion.cs
+ * Based off Tim Farley's Arduiono.cs
  */
 using System;
 using System.Linq;
